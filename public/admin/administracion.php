@@ -13,9 +13,19 @@
     <script src="js/getBlogAdmin.js"></script>
     <title></title>
 </head>
-<div id="result"></div>
 
 <body>
-    
+<div id="result"></div>
+<div id="NewBlog">
+    <form id="newblogform">
+        <input type="text" name="pTitulo">
+        <input type="text" name="pNombreAutor">
+        <input type="text" name="pCuerpo">
+        <input type="date" name="pFecha">
+        <input type="file" name="file">
+        <input type="button" value="Guardar">
+    </form>
+</div>
+<div id="respuesta"></div>
 </body>
 </html>

@@ -11,15 +11,15 @@ function inicio(){
                 '<input type="text"  name="pNombreAutor" value ="'+arr[i].nombreAutor+'">'+
                 '<textarea name="pCuerpo" >'+arr[i].cuerpo+'</textarea>'+
                 '<input type="date" name="pFecha" value ="'+arr[i].fecha+'">'+
-                '</form>'+
-                '<button onclick = "SaveBlog('+i+')">Guardar</button>'+
-                '<button onclick = "DeleteBlog('+i+')">Eliminar</button>');
+                '<button onclick = "UpdateBlog('+i+')">Guardar</button>'+
+                '<button onclick = "DeleteBlog('+i+')">Eliminar</button>'+
+                '</form>');
         }
       
     });
 }
-function SaveBlog(num){
-    $.post("InsertBlog.php",{
+function UpdateBlog(num){
+    $.post("UpdateBlog.php",{
         pId:arr[num].id,
         pNombreAutor:$("form")[num][1].value,
         pCuerpo:$("form")[num][2].value,
@@ -33,4 +33,19 @@ function DeleteBlog(num){
     $.post("DeleteBlog.php",{
         ID:arr[num].id}
            ,function(data){location.reload();})
+}
+function SabeBlog(){
+    var x  = new FormData($("#newblogform")[0])
+    $.ajax({
+                url: "InsertBlog.php",
+                type: "POST",
+                data: x,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+
 }
