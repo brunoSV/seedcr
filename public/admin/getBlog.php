@@ -18,7 +18,7 @@ while($row=mysqli_fetch_array($result))
            $restem['fecha'] = $row['Fecha'];
            $restem['titulo'] = $row['Titulo'];
            $restem['ExtenImg'] = $row['ExtenImg'];
-
+           $restem['pBit'] = $row['Activo'];
 
 
          $respuesta["blog".$i.""]=$restem;

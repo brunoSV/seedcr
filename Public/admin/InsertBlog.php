@@ -7,6 +7,7 @@
 // .............................    'pFecha'        ==> date
 // .............................    'pTitulo'       ==> varchar(200)
 // .............................    'file'          ==> file
+// .............................    'pBit'           ==> ingles
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,16 +39,16 @@ if (isset($_FILES["file"]))
     else
     {
         $src = $pPathImg.$nombre;
-        echo($src);
+        echo($tipo);
         move_uploaded_file($ruta_provisional, $src);
         
         
-        
+        /*
         $link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ');  
         $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');
-        $result = mysqli_query($link, 'call Sp_SaveBlog(0,"'.$_POST["pNombreAutor"].'","'.$src.'","'.$tipo.'","'.$_POST["pCuerpo"].'","'.$_POST["pFecha"].'","'.$_POST["pTitulo"].'",'.'1'.')' )
+        $result = mysqli_query($link, 'call Sp_SaveBlog(0,"'.$_POST["pNombreAutor"].'","'.$src.'","'.$tipo.'","'.$_POST["pCuerpo"].'","'.$_POST["pFecha"].'","'.$_POST["pTitulo"].'",'.$_POST["pBit"].')' )
         or die("Error base de datos");
-        
+        */
         
     }
 }

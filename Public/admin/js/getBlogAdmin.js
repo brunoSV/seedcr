@@ -11,6 +11,7 @@ function inicio(){
                 '<input type="text"  name="pNombreAutor" value ="'+arr[i].nombreAutor+'">'+
                 '<textarea name="pCuerpo" >'+arr[i].cuerpo+'</textarea>'+
                 '<input type="date" name="pFecha" value ="'+arr[i].fecha+'">'+
+                '<input type="checkbox" checked ='+arr[i].pBit+' name="pBit">Ingles '+
                 '<button onclick = "UpdateBlog('+i+')">Guardar</button>'+
                 '<button onclick = "DeleteBlog('+i+')">Eliminar</button>'+
                 '</form>');
@@ -27,6 +28,7 @@ function UpdateBlog(num){
         pTitulo:$("form")[num][0].value,
         pExt:arr[num].ExtenImg,
         pIMG:arr[num].pathImg,
+        pBit:arr[num].pBit
     },function(data){location.reload();})
 }
 function DeleteBlog(num){

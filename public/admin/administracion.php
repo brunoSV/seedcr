@@ -23,6 +23,7 @@
         <input type="text" name="pCuerpo">
         <input type="date" name="pFecha">
         <input type="file" name="file">
+        <input type="checkbox" name="pBit" >Ingles
         <input type="button" value="Guardar">
     </form>
 </div>
