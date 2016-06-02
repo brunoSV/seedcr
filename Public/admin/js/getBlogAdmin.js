@@ -4,7 +4,7 @@ var arr;
 function inicio(){
     $.post( "getBlogAdmin.php", function( data ) {
         arr = $.map(JSON.parse(data), function(el) { return el });
-        for (i=1;i<=arr.length;i++){
+        for (i=0;i<arr.length;i++){
             $('#result').append(
                 '<form>'+
                 '<input type="text" name="pTitulo" value ="'+arr[i].titulo+'">'+
@@ -12,8 +12,8 @@ function inicio(){
                 '<textarea name="pCuerpo" >'+arr[i].cuerpo+'</textarea>'+
                 '<input type="date" name="pFecha" value ="'+arr[i].fecha+'">'+
                 '<input type="checkbox" checked ='+arr[i].pBit+' name="pBit">Ingles '+
-                '<button onclick = "UpdateBlog('+i+')">Guardar</button>'+
-                '<button onclick = "DeleteBlog('+i+')">Eliminar</button>'+
+                '<button onclick = "UpdateBlog('+(i)+')">Guardar</button>'+
+                '<button onclick = "DeleteBlog('+(i)+')">Eliminar</button>'+
                 '</form>');
         }
       
@@ -36,7 +36,7 @@ function DeleteBlog(num){
         ID:arr[num].id}
            ,function(data){location.reload();})
 }
-function SabeBlog(){
+function SaveBlog(){
     var x  = new FormData($("#newblogform")[0])
     $.ajax({
                 url: "InsertBlog.php",
