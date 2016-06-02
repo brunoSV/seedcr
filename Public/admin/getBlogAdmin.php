@@ -1,10 +1,8 @@
 <?php
-//Metodo post campos :
-// .............................    'pBit'           ==> ingles
-$link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ' . mysql_error());
+  $link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ' . mysql_error());
 
   $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');
-  $result = mysqli_query($link, 'call Sp_GetBlog('.$_POST["pBit"].')')
+  $result = mysqli_query($link, 'call Sp_GetBlogAdmin()')
   or die('1No se pudo sacar la base de datos');
 
   $i=1;
