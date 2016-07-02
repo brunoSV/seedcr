@@ -15,6 +15,7 @@
 </head>
 
 <body>
+<div id="result"></div>
 <div id="NewBlog">
     <form id="newblogform">
         <input type="text" name="pTitulo">
@@ -26,7 +27,6 @@
         <input type="button" value="Guardar">
     </form>
 </div>
-
-<div id="result"></div>
+<div id="respuesta"></div>
 </body>
 </html>

@@ -2,9 +2,9 @@ $(document).ready(inicio);
 var arr;
 
 function inicio(){
-    $.post( "getBlogAdmin.php", function( data ) {
+    $.post( "getBlog.php", function( data ) {
         arr = $.map(JSON.parse(data), function(el) { return el });
-        for (i=1;i<=arr.length;i++){
+        for (i=0;i<arr.length;i++){
             $('#result').append(
                 '<form>'+
                 '<input type="text" name="pTitulo" value ="'+arr[i].titulo+'">'+
