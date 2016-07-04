@@ -600,3 +600,28 @@ body {
     font-size: 15px;
     color: #516C18
 }
+.gridder-list {
+    width: auto;
+    float: left;
+    padding-left: 110px;
+    list-style-type: none;
+}
+.gridder-show {
+    display: inline-block;
+    margin-top: 250px;
+    background-color: #cccc8f;    ;
+}
+.gridder-navigation a {
+    color: black;
+    float: right;
+    margin-right: 10px;
+}
+.gridder-navigation {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+.gridder-expanded-content .img-responsive {
+    margin-left: 20px;
+    margin-top: 38px;
+}
