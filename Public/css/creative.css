@@ -612,6 +612,7 @@ body {
     background-color: #cccc8f;    ;
 }
 .gridder-navigation a {
+    cursor: pointer;
     color: black;
     float: right;
     margin-right: 10px;

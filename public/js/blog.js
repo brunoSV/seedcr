@@ -32,6 +32,9 @@ var SEED = {
             $('.gridder-show h2').text('Blog ' + this.id);
             $('.gridder-show').show();
         });
+        $('.gridder-close').on('click', function() {
+            $('.gridder-show').hide();
+        });
 
     }
 };
