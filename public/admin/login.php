@@ -44,7 +44,7 @@ if (isset ($_POST['login']) && ($_POST['login'] == 'Login') &&
 {
 /* Usuario autenticado, inicializa la cookie */
 $_SESSION['uid'] = $uid;
-header('Location: Administracion.php');
+header('Location: admin.php');
 
 }
 else{?>
