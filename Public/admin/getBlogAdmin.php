@@ -15,7 +15,22 @@
     $restem['fecha'] = $row['Fecha'];
     $restem['titulo'] = $row['Titulo'];
     $restem['ExtenImg'] = $row['ExtenImg'];
-    $restem['pBit'] = $row['Activo'];
+    switch ($row['Activo']) {
+        case 'FALSE':
+            $restem['pBit'] = '<input selected type="radio" name="pBit" id="pBit" value="espanol" checked>
+<label for="espanol">Español: </label>
+<input type="radio" name="pBit" id="pBit" value="ingles">
+<label for="pBit">Ingles: </label>';
+            break;
+        
+        default:
+            $restem['pBit'] = '<input type="radio" name="pBit" id="pBit" value="espanol">
+<label for="espanol">Español: </label>
+<input type="radio" name="pBit" id="pBit" value="ingles" checked>
+<label for="ingles">Ingles: </label>';
+            break;
+    }
+    
 
     $respuesta[$i]=$restem;
     $i++;

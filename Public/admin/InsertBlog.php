@@ -26,6 +26,7 @@
 
 if (isset($_FILES["file"]))
 {
+    
     $file = $_FILES["file"];
     $nombre = $file["name"];
     $tipo = $file["type"];
@@ -38,22 +39,40 @@ if (isset($_FILES["file"]))
     
     else
     {
-        $src = $pPathImg.$nombre;
+        switch ($tipo) {
+            case 'image/jpg':
+                $tipo=".jpg";
+                break;
+            case 'image/jpeg':
+                $tipo=".jpeg";
+                break;
+            case 'image/png':
+                $tipo=".png";
+                break;
+            default:
+                $tipo=".gif";
+                break;
+        }
+        $nombre = date('ljS\ofFYhisA');
+        $src = $pPathImg.$nombre.$tipo;
         echo($tipo);
         move_uploaded_file($ruta_provisional, $src);
         
+        if($_POST["pBit"]='on'){
+            $bit = 1;}
+        else{
+            $bit = 0;}
+    
         
-        /*
         $link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ');  
-        $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');
-        $result = mysqli_query($link, 'call Sp_SaveBlog(0,"'.$_POST["pNombreAutor"].'","'.$src.'","'.$tipo.'","'.$_POST["pCuerpo"].'","'.$_POST["pFecha"].'","'.$_POST["pTitulo"].'",'.$_POST["pBit"].')' )
+        $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');  
+        $result = mysqli_query($link, 'call Sp_SaveBlog(0,"'.$_POST["pNombreAutor"].'","'.$src.'","'.$tipo.'","'.$_POST["pCuerpo"].'","'.$_POST["pFecha"].'","'.$_POST["pTitulo"].'",'.$bit.')' )
         or die("Error base de datos");
-        */
+        
         
     }
+      echo(json_encode($respuesta));
 }
-
-
 
 
 

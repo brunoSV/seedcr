@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="s.e.e.d. main page">
         <meta name="author" content="">
-        <link rel="icon" type="image/jp
+        <link rel="icon" type="image/jp">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/jquery.js"></script>
         <script src="js/getBlogAdmin.js"></script>
@@ -51,7 +51,7 @@
                 <input type="date" name="pFecha">
                 <input type="file" name="file">
                 <input type="checkbox" name="pBit" >Ingles
-                <input type="button" value="Guardar">
+                <button  onclick = "SaveBlog()">Guardar</button>
             </form>
         </div>
 
