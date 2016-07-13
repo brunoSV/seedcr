@@ -10,6 +10,12 @@ body {
     height: 100%;
 }
 
+.thumb{
+     height: 300px;
+     border: 1px solid #000;
+     margin: 10px 5px 0 0;
+}
+
 body {
     font-family: "Montserrat", "Varela Round", sans-serif;
 }
@@ -585,4 +591,11 @@ body {
     font-size: 15px;
     color: #516C18
     
+}
+.TextAreaTamañoFijo{
+     position: relative;
+     max-width:100%;
+     min-width:100%;
+     max-height:200px;
+     min-height:200px;
 }

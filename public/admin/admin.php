@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
 
+        <script src="js/bootstrap.js"></script>
         <!-- Custom Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
         <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css" />
@@ -42,18 +43,45 @@
 
             </div>
         </div>
+        
+<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Nuevo Blog</button>
         <section id="result"></section>
-        <div id="NewBlog">
-            <form id="newblogform">
-                <input type="text" name="pTitulo">
-                <input type="text" name="pNombreAutor">
-                <input type="text" name="pCuerpo">
-                <input type="date" name="pFecha">
-                <input type="file" name="file">
-                <input type="checkbox" name="pBit" >Ingles
-                <button  onclick = "SaveBlog()">Guardar</button>
-            </form>
-        </div>
+        
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+                <div id="NewBlog" >
+                <form id="newblogform"  >
+                    <label>Titulo del blog: </label><input type="text" class="form-control" name="pTitulo"><br/>
+                    <label>Nombre del autor: </label><input type="text"class="form-control" name="pNombreAutor"><br/>
+                    <label>Cuerpo del blog: </label><textarea type="text"class="form-control TextAreaTamañoFijo" name="pCuerpo"id='textCuerpo'></textarea>
+                    <p id='numCar'></p><br/>
+                    <label>Fecha de la publicación: </label><input type="date" class="form-control"name="pFecha"><br/>
+                    <label>Imagen del blog: </label><input type="file"class="form-control" id="file"  name="file">
+                    <input type="checkbox" name="pBit" >Ingles<br/>
+                    <button class="btn btn-default"  onclick = "SaveBlog()">Guardar</button><br/>
+                    
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    
+                </form>
+                <output id="list"></output>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+
+  </div>
+</div>
     </body>
 </html>
