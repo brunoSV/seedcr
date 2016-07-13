@@ -21,8 +21,29 @@ function inicio(){
           document.getElementById('file').addEventListener('change', archivo, false);
           document.getElementById('textCuerpo').addEventListener("input", function(){
              var v = wordCount( this.value );
-             $('#numCar').text(v)}, false);
+             $('#numCar').text(v);
+             if (v>=1800 && v <= 1900){
+                 $('#numCar').text(v).css("color",'yellow');
+            }
+            else if(v >= 1900){
+                 $('#numCar').text(v).css("color",'red');
+            }
+            else {
+                 $('#numCar').text(v).css("color",'black');
+            }
+            }, false);
+            
+    $("#AbrirModal").click(limpiarmodal);
     });
+}
+function limpiarmodal(){
+    $('#newblogform').each (function(){
+
+  this.reset();
+
+});
+$('#list').empty();
+
 }
 function UpdateBlog(num){
     var x ;
@@ -88,8 +109,6 @@ function wordCount( val ){
     var wom = val.match(/\S+/g);
     return (val.length);
 }
-
-
 
 
              

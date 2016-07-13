@@ -44,7 +44,7 @@
             </div>
         </div>
         
-<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Nuevo Blog</button>
+<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" id = 'AbrirModal'>Nuevo Blog</button>
         <section id="result"></section>
         
 
@@ -56,15 +56,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Ingresar nuevo blog</h4>
       </div>
       <div class="modal-body">
                 <div id="NewBlog" >
                 <form id="newblogform"  >
                     <label>Titulo del blog: </label><input type="text" class="form-control" name="pTitulo"><br/>
                     <label>Nombre del autor: </label><input type="text"class="form-control" name="pNombreAutor"><br/>
-                    <label>Cuerpo del blog: </label><textarea type="text"class="form-control TextAreaTamañoFijo" name="pCuerpo"id='textCuerpo'></textarea>
-                    <p id='numCar'></p><br/>
+                    <label>Cuerpo del blog: </label><textarea type="text"class="form-control TextAreaTamañoFijo" maxlength="2000" name="pCuerpo"id='textCuerpo'></textarea>
+                    Cantidad de Caracteres: <div id='numCar'></div><br/>
                     <label>Fecha de la publicación: </label><input type="date" class="form-control"name="pFecha"><br/>
                     <label>Imagen del blog: </label><input type="file"class="form-control" id="file"  name="file">
                     <input type="checkbox" name="pBit" >Ingles<br/>
@@ -73,7 +73,7 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     
                 </form>
-                <output id="list"></output>
+                <div id="list"></div>
         </div>
         
       </div>

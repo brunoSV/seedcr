@@ -58,10 +58,11 @@ if (isset($_FILES["file"]))
         echo($tipo);
         move_uploaded_file($ruta_provisional, $src);
         
-        if($_POST["pBit"]='on'){
+        if($_POST["pBit"]=='on'){
             $bit = 1;}
         else{
             $bit = 0;}
+            
     
         
         $link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ');  
