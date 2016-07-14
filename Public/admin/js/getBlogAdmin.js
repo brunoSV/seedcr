@@ -6,15 +6,19 @@ function inicio(){
         arr = $.map(JSON.parse(data), function(el) { return el });
         for (i=0;i<arr.length;i++){
             $('#result').append(
-                '<form>'+
-                '<input type="text" name="pTitulo" value ="'+arr[i].titulo+'">'+
-                '<input type="text"  name="pNombreAutor" value ="'+arr[i].nombreAutor+'">'+
-                '<textarea name="pCuerpo" >'+arr[i].cuerpo+'</textarea>'+
-                '<input type="date" name="pFecha" value ="'+arr[i].fecha+'">'+
-                arr[i].pBit+
-                '<button onclick = "UpdateBlog('+(i)+')">Guardar</button>'+
-                '<button onclick = "DeleteBlog('+(i)+')">Eliminar</button>'+
-                '</form>');
+                '<form class="form" >'+
+                '<div class="form-group">'+
+                '<label>Titulo del blog: </label><input class="form-control" type="text" name="pTitulo" value ="'+arr[i].titulo+'">'+
+                '<label>Nombre del autor: </label><input class="form-control" type="text"  name="pNombreAutor" value ="'+arr[i].nombreAutor+'">'+
+                '</div><div class="form-group">'+
+                '<label>Cuerpo del blog: </label><textarea class="form-control TextAreaTamañoFijo" name="pCuerpo" >'+arr[i].cuerpo+'</textarea>'+
+                '</div><div class="form-group">'+
+                '<label>Fecha de la publicación: </label><input class="form-control" type="date" name="pFecha" value ="'+arr[i].fecha+'">'+arr[i].pBit+
+                '<button class="btn btn-default" onclick = "UpdateBlog('+(i)+')">Guardar</button>'+
+                '<button class="btn btn-default" onclick = "DeleteBlog('+(i)+')">Eliminar</button>'+
+                '</div>'+
+                '</form><hr>');
+                
         }
 
       
