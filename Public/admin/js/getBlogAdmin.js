@@ -5,6 +5,10 @@ function inicio(){
 
           $('#etiCorreo').hide();
           $('#etiPass').hide();
+
+          $('#etiCorreoU').hide();
+          $('#etiPassU').hide();
+          $('#etiCorreoU').hide();
     $.post( "getBlogAdmin.php", function( data ) {
         arr = $.map(JSON.parse(data), function(el) { return el });
         for (i=0;i<arr.length;i++){
@@ -17,8 +21,8 @@ function inicio(){
                 '<label>Cuerpo del blog: </label><textarea class="form-control TextAreaTamañoFijo" name="pCuerpo" >'+arr[i].cuerpo+'</textarea>'+
                 '</div><div class="form-group">'+
                 '<label>Fecha de la publicación: </label><input class="form-control" type="date" name="pFecha" value ="'+arr[i].fecha+'">'+arr[i].pBit+
-                '<button class="btn btn-default" onclick = "UpdateBlog('+(i)+')">Guardar</button>'+
-                '<button class="btn btn-default" onclick = "DeleteBlog('+(i)+')">Eliminar</button>'+
+                '<button type="button" class="btn btn-default" onclick = "UpdateBlog('+(i)+')">Guardar</button>'+
+                '<button type="button" class="btn btn-default" onclick = "DeleteBlog('+(i)+')">Eliminar</button>'+
                 '</div>'+
                 '</form><hr>');
                 
@@ -28,6 +32,9 @@ function inicio(){
           document.getElementById('pCorreo').addEventListener('input', validarCorreo, false);
           document.getElementById('pPass').addEventListener('input', validarPass, false);
           document.getElementById('pPass1').addEventListener('input', validarPass, false);
+          document.getElementById('pCorreoU').addEventListener('input', validarCorreoU, false);
+          document.getElementById('pPassU').addEventListener('input', validarPassU, false);
+          document.getElementById('pPass1U').addEventListener('input', validarPassU, false);
           document.getElementById('file').addEventListener('change', archivo, false);
           $("#AbrirModal").click(limpiarmodal);
           $("#AbrirModal1").click(limpiarmodal);
@@ -132,6 +139,34 @@ function validarPass (){
         $('#pPass1').css("color","black")
         $('#etiPass').hide();}
 
+}function validarCorreoU(){
+  var valor = ($('#pCorreoU').val());
+expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ( !expr.test(valor) ){
+        $('#pCorreoU').css("color","red");
+        $('#etiCorreoU').show();
+        $('#etiCorreoU').css("color","red");
+      }
+
+    else{
+        $('#pCorreoU').css("color","black")
+        $('#etiCorreoU').hide();}
+
+}
+function validarPassU (){
+  var valor1 = ($('#pPassU').val());
+  var valor2 = ($('#pPass1U').val());
+
+    if ( valor2 != valor1 ){
+        $('#pPassU').css("color","red")
+        $('#pPass1U').css("color","red")
+        $('#etiPassU').show();
+        $('#etiPassU').css("color","red")}
+    else{
+        $('#pPassU').css("color","black")
+        $('#pPass1U').css("color","black")
+        $('#etiPassU').hide();}
+
 }
 
 function validarCorreoEnviar(){
@@ -161,6 +196,24 @@ function validarPassEnviar (){
 
 
 function UpdateBlog(num){
+
+        if($("form")[num][1].value == "")
+        {
+          alert("Hay errores en el formulario: El nombre del autor no puede ser vacío");
+        }
+        else if($("form")[num][2].value == "")
+        {
+          alert("Hay errores en el formulario: El cuerpo del blog no puede ser vacío");
+        }
+        else if($("form")[num][3].value == "")
+        {
+          alert("Hay errores en el formulario: La fecha no puede ser vacía");
+        }
+        else if($("form")[num][0].value == "")
+        {
+          alert("Hay errores en el formulario: El titulo no puede ser vacío");
+        }
+        else{
     var x ;
     if ( $("form")[num][5].checked){
         x = 1 ;
@@ -178,7 +231,7 @@ function UpdateBlog(num){
         pIMG:arr[num].pathImg,
         pBit:x,
     },function(data){location.reload()})
-}
+}}
 function DeleteBlog(num){
     $.post("DeleteBlog.php",{
         ID:arr[num].id}

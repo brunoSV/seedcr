@@ -25,7 +25,7 @@ function generaPass(){
      
     //Se define la variable que va a contener la contraseña
     $pass = "";
-    //Se define la longitud de la contraseña, en mi caso 10, pero puedes poner la longitud que quieras
+    //Se define la longitud de la contraseña, en mi caso 5
     $longitudPass=5;
      
     //Creamos la contraseña

@@ -48,6 +48,7 @@
 
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" id='AbrirModal'>Nuevo Blog</button>
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo2" id='AbrirModal1'>Cambio de Contraseña</button>
+    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo3" id='AbrirModal2'>Nuevo Usuario</button>
     <section id="result"></section>
 
 
@@ -109,6 +110,40 @@
                             <label id="etiPass">Las contraseñas deben se iguales</label><br>
                             <label>Contraseña: </label><input type="password"  class="form-control" id="pPass" name="pContra1"><br />
                             <label>Contraseña: </label><input type="password" class="form-control" id="pPass1" name="pContra2"><br />
+                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /><br />
+
+                        </form>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+         <!-- Nuevo Usser -->
+    <div id="myMo3" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Nuevo usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="NewUser">
+                        <form id="NewUserform">
+                            <label id="etiCorreoU">El correo no es válido</label><br>
+                            <label>Correo: </label><input type="email" class="form-control" name="pCorreoU"id="pCorreoU"><br />
+                            <label id="etiUsuarioU">El usuario ya existe</label><br>
+                            <label>Usuario: </label><input type="text" class="form-control" name="pUsuarioU"id="pUsuarioU"><br />
+                            <label id="etiPassU">Las contraseñas deben se iguales</label><br>
+                            <label>Contraseña: </label><input type="password"  class="form-control" id="pPassU" name="pContra1U"><br />
+                            <label>Contraseña: </label><input type="password" class="form-control" id="pPass1U" name="pContra2U"><br />
                             <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /><br />
 
                         </form>
