@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery.js"></script>
     <script src="js/getBlogAdmin.js"></script>
+    <script src="js/fileinput.js"></script>
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
@@ -28,6 +29,7 @@
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/fileinput.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
@@ -45,7 +47,7 @@
     </div>
 
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" id='AbrirModal'>Nuevo Blog</button>
-    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo2">Cambio de Contraseña</button>
+    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo2" id='AbrirModal1'>Cambio de Contraseña</button>
     <section id="result"></section>
 
 
@@ -67,13 +69,13 @@
                             <label>Cuerpo del blog: </label><textarea type="text" class="form-control TextAreaTamañoFijo" maxlength="2000" name="pCuerpo" id='textCuerpo'></textarea>
                             Cantidad de Caracteres: <div id='numCar'></div><br />
                             <label>Fecha de la publicación: </label><input type="date" class="form-control" name="pFecha"><br />
-                            <label>Imagen del blog: </label><input type="file" class="form-control" id="file" name="file">
-                            <input type="checkbox" name="pBit">Ingles<br />
-                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br />
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <div id="list"></div><br /><br />
+                            <label>Imagen del blog: </label><input type="file" data-allowed-file-extensions='["jpg", "png", "jpeg", "gif"]' data-show-preview="false" data-show-upload="false" data-show-caption="true" class="file" id="file" name="file"><br />
+                            <input type="checkbox" name="pBit">Ingles<br /><br />
+                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /> <br />
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button><br />
 
                         </form>
-                        <div id="list"></div>
                     </div>
 
                 </div>
@@ -102,14 +104,16 @@
                 <div class="modal-body">
                     <div id="NewPass">
                         <form id="NewPassform">
-                            <label>Correo: </label><input type="email" class="form-control" name="pCorreo"><br />
-                            <label>Contraseña: </label><input type="password" class="form-control" name="pContra1"><br />
-                            <label>Contraseña: </label><input type="password" class="form-control" name="pContra2"><br />
-                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br />
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <label id="etiCorreo">El correo no es válido</label><br>
+                            <label>Correo: </label><input type="email" class="form-control" name="pCorreo"id="pCorreo"><br />
+                            <label id="etiPass">Las contraseñas deben se iguales</label><br>
+                            <label>Contraseña: </label><input type="password"  class="form-control" id="pPass" name="pContra1"><br />
+                            <label>Contraseña: </label><input type="password" class="form-control" id="pPass1" name="pContra2"><br />
+                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /><br />
 
                         </form>
-                        <div id="list"></div>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     </div>
 
                 </div>
