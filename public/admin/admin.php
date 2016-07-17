@@ -64,15 +64,15 @@
                 <div class="modal-body">
                     <div id="NewBlog">
                         <form id="newblogform">
-                            <label>Titulo del blog: </label><input type="text" class="form-control" name="pTitulo"><br />
-                            <label>Nombre del autor: </label><input type="text" class="form-control" name="pNombreAutor"><br />
-                            <label>Cuerpo del blog: </label><textarea type="text" class="form-control TextAreaTamañoFijo" maxlength="2000" name="pCuerpo" id='textCuerpo'></textarea>
+                            <label>Titulo del blog: </label><input type="text" class="form-control" required name="pTitulo" id="pTitulo"><br />
+                            <label>Nombre del autor: </label><input type="text" class="form-control"  required name="pNombreAutor" id="pNombreAutor"><br />
+                            <label>Cuerpo del blog: </label><textarea type="text" class="form-control TextAreaTamañoFijo"  required maxlength="2000" name="pCuerpo" id='textCuerpo'></textarea>
                             Cantidad de Caracteres: <div id='numCar'></div><br />
-                            <label>Fecha de la publicación: </label><input type="date" class="form-control" name="pFecha"><br />
+                            <label>Fecha de la publicación: </label><input type="date" class="form-control"  required name="pFecha" id="pFecha"><br />
                             <div id="list"></div><br /><br />
-                            <label>Imagen del blog: </label><input type="file" data-allowed-file-extensions='["jpg", "png", "jpeg", "gif"]' data-show-preview="false" data-show-upload="false" data-show-caption="true" class="file" id="file" name="file"><br />
-                            <input type="checkbox" name="pBit">Ingles<br /><br />
-                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /> <br />
+                            <label>Imagen del blog: </label><input type="file" required  data-allowed-file-extensions='["jpg", "png", "jpeg", "gif"]' data-show-preview="false" data-show-upload="false" data-show-caption="true" class="file" id="file" name="file"><br />
+                            <input type="checkbox" required  name="pBit">Ingles<br /><br />
+                            <button type="button" class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /> <br />
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button><br />
 
                         </form>

@@ -61,6 +61,49 @@ function limpiarmodal(){
 $('#list').empty();
 
 }
+
+function ValidarFormulario(){
+    var formulario  = $('#newblogform');
+    var titulo= $('#pTitulo');
+    var autor= $('#pNombreAutor');
+    var cuerpo= $('#textCuerpo');
+    var fecha= $('#pFecha');
+    var img= $('#file');
+
+    if(titulo.val()==null || titulo.val()=="")
+    {
+      alert("Hay errores en el formulario: El titulo no puede ser vacío");
+      return false;
+    }
+
+    else if(autor.val()==null || autor.val()=="")
+    {
+      alert("Hay errores en el formulario: El autor del blog no puede ser vacío");
+      return false;
+    }
+
+    else if(cuerpo.val()==null || cuerpo.val()=="")
+    {
+      alert("Hay errores en el formulario: El cuerpo del blog no puede ser vacío");
+      return false;
+    }
+
+    else if(fecha.val()==null || fecha.val()=="")
+    {
+      alert("Hay errores en el formulario: La fecha no puede ser vacía");
+      return false;
+    }
+
+    else if(img.val()==null || img.val()=="")
+    {
+      alert("Hay errores en el formulario: Se debe guardar una imagen");
+      return false;
+    }
+
+    return true;
+
+}
+
 function validarCorreo(){
   var valor = ($('#pCorreo').val());
 expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -96,10 +139,10 @@ function validarCorreoEnviar(){
 expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if ( !expr.test(valor) ){
         alert("El correo no es valido");
-        return true;
+        return false;
       }
     else
-      return false
+      return true;
 
 
 }
@@ -109,10 +152,10 @@ function validarPassEnviar (){
 
     if ( valor2 != valor1 ){
         alert("Las contraseñas son distintas");
-        return true;
+        return false;
       }
     else
-      return false
+      return true
 
 }
 
@@ -134,7 +177,7 @@ function UpdateBlog(num){
         pExt:arr[num].ExtenImg,
         pIMG:arr[num].pathImg,
         pBit:x,
-    },function(data){})
+    },function(data){location.reload()})
 }
 function DeleteBlog(num){
     $.post("DeleteBlog.php",{
@@ -142,6 +185,7 @@ function DeleteBlog(num){
            ,function(data){location.reload();})
 }
 function SaveBlog(){
+  if(ValidarFormulario()){
     var x  = new FormData($("#newblogform")[0]);
     $.ajax({
                 url: "InsertBlog.php",
@@ -151,10 +195,10 @@ function SaveBlog(){
                 processData: false,
                 success: function(datos)
                 {
-    
+                  location.reload()
                 }
             });
-}
+}}
 function archivo(evt) {
       var files = evt.target.files; // FileList object
        
