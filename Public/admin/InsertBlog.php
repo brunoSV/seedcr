@@ -19,8 +19,8 @@
 
 // Retorna :
 // .............................    Json 'Res'
-    
-   
+
+
 
 
 
@@ -59,11 +59,13 @@ if (isset($_FILES["file"]))
         move_uploaded_file($ruta_provisional, $src);
         
         if($_POST["pBit"]=='on'){
-            $bit = 1;}
+            $bit = 1;
+        }
         else{
-            $bit = 0;}
-            
-    
+            $bit = 0;
+        }
+        
+        
         
         $link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ');  
         $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');  
@@ -72,7 +74,7 @@ if (isset($_FILES["file"]))
         
         
     }
-      echo(json_encode($respuesta));
+    echo(json_encode($respuesta));
 }
 
 

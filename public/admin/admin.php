@@ -1,6 +1,6 @@
 <?php
-  include 'session.inc';
-  check_login();
+include 'session.inc';
+check_login();
 ?>
 
 
