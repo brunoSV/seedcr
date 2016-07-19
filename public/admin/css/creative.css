@@ -11,9 +11,10 @@ body {
 }
 
 .thumb{
-     height: 300px;
-     border: 1px solid #000;
+     width: 50%;
      margin: 10px 5px 0 0;
+    
+     
 }
 
 body {
