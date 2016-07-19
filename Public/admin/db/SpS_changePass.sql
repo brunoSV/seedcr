@@ -11,7 +11,6 @@ create procedure Sp_SetPass(
 	in pUser varchar(200),
     in pPass varchar(2000))
     begin
-    SET SQL_SAFE_UPDATES = 0;
 		update Usuarios
          set Pass = pPass 
          where Usuario = pUser;
@@ -25,7 +24,7 @@ create procedure Sp_InsertUser(
     in pEmail varchar(2000))
     begin
 		if ( not exists (select count(1) from Usuarios
-					where Usuario = Usuario 
+					where Usuario = pUser 
 					   or Correo = pEmail)) then
                        insert into Usuarios (Usuario,Pass,Correo)
                        values(pUser,pPass,pEmail);

@@ -592,8 +592,7 @@ body {
     color: #516C18
     
 }
-.TextAreaTamañoFijo{
-     position: relative;
+.TextAreaTamaoFijo{
      max-width:100%;
      min-width:100%;
      max-height:200px;

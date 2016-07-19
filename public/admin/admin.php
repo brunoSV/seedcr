@@ -67,7 +67,7 @@ check_login();
                         <form id="newblogform">
                             <label>Titulo del blog: </label><input type="text" class="form-control" required name="pTitulo" id="pTitulo"><br />
                             <label>Nombre del autor: </label><input type="text" class="form-control"  required name="pNombreAutor" id="pNombreAutor"><br />
-                            <label>Cuerpo del blog: </label><textarea type="text" class="form-control TextAreaTamañoFijo"  required maxlength="2000" name="pCuerpo" id='textCuerpo'></textarea>
+                            <label>Cuerpo del blog: </label><textarea type="text" class="form-control TextAreaTamaoFijo"  required maxlength="2000" name="pCuerpo" id='textCuerpo'></textarea>
                             Cantidad de Caracteres: <div id='numCar'></div><br />
                             <label>Fecha de la publicación: </label><input type="date" class="form-control"  required name="pFecha" id="pFecha"><br />
                             <div id="list"></div><br /><br />
@@ -105,12 +105,14 @@ check_login();
                 <div class="modal-body">
                     <div id="NewPass">
                         <form id="NewPassform">
+                            <label id="etiUsus">El Usuario y el correo no coinciden</label><br>
+                            <label>Usuario: </label><input type="text" class="form-control" name="pUser"id="pUser"><br />
                             <label id="etiCorreo">El correo no es válido</label><br>
                             <label>Correo: </label><input type="email" class="form-control" name="pCorreo"id="pCorreo"><br />
                             <label id="etiPass">Las contraseñas deben se iguales</label><br>
                             <label>Contraseña: </label><input type="password"  class="form-control" id="pPass" name="pContra1"><br />
                             <label>Contraseña: </label><input type="password" class="form-control" id="pPass1" name="pContra2"><br />
-                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /><br />
+                            <button type="button"  class="btn btn-default" onclick="NewPass()">Guardar</button><br /><br />
 
                         </form>
 
@@ -144,7 +146,7 @@ check_login();
                             <label id="etiPassU">Las contraseñas deben se iguales</label><br>
                             <label>Contraseña: </label><input type="password"  class="form-control" id="pPassU" name="pContra1U"><br />
                             <label>Contraseña: </label><input type="password" class="form-control" id="pPass1U" name="pContra2U"><br />
-                            <button class="btn btn-default" onclick="SaveBlog()">Guardar</button><br /><br />
+                            <button type="button"  class="btn btn-default" onclick="NewUser()">Guardar</button><br /><br />
 
                         </form>
 
