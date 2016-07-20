@@ -601,14 +601,11 @@ body {
     color: #516C18
 }
 .gridder-list {
-    width: auto;
-    float: left;
-    padding-left: 110px;
     list-style-type: none;
+    margin-top: 20px;
 }
 .gridder-show {
     display: inline-block;
-    margin-top: 250px;
     background-color: #cccc8f;    ;
 }
 .gridder-navigation a {
@@ -625,4 +622,7 @@ body {
 .gridder-expanded-content .img-responsive {
     margin-left: 20px;
     margin-top: 38px;
+}
+.gridder-show {
+    display:none;
 }
