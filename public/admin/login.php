@@ -22,7 +22,6 @@ function getpass($u,$p)
     }
     else
     {
-        mysql_close($link);
         return (" ");
     }
 
@@ -40,7 +39,7 @@ function check_auth($u,$p) {
 
 }
 
-if (isset ($_POST['login']) && ($_POST['login'] == 'Login') &&
+if (isset ($_POST['login']) && ($_POST['login'] == 'login') &&
 ($uid = check_auth($_POST['User'], $_POST['pass'])))
 {
     /* Usuario autenticado, inicializa la cookie */
@@ -66,7 +65,9 @@ else{?>
 
   <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/login.js"></script>
 
   <!-- Custom Fonts -->
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
@@ -95,23 +96,50 @@ else{?>
 </head>
 
 <body>
-  <div class="wrapper">
+  <div>
     <form id="form" class="form-signin" action="login.php" method="post" enctype="multipart/form-data">
       <fieldset>
         <h3 class="form-signin-heading">Login</h3>
-        <input type="text" class="form-control" placeholder="Username" name="User">
-        <input type="password" class="form-control" placeholder="Password" name="pass" >
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-        </label>
+        <input type="text" class="form-control" required placeholder="Username" name="User">
+        <input type="password" class="form-control" required placeholder="Password" name="pass" >
       </fieldset>
-      <input type="submit" class="btn btn-lg btn-primary btn-block" name="login" value="Login">
+      <input type="submit" class="btn btn-lg btn-primary btn-block" name="login" value="login">    
+      <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#myModal" id='AbrirModal'>Restablecer Contraseña</button>
     </form>
-  </div>
+ </div>
+     
+ <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ingresar nuevo blog</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="Respass">
+                        <form id="Respassform">
+                            
+                            <label id="etiCorreo">El correo no es válido</label><br>
+                            <label>Correo: </label><input type="email" class="form-control" required name="pCorreo"id="pCorreo"><br />
+                            <label id="etiUsuarioU">El usuario y el correo no coinside</label><br>
+                            <label>Usuario: </label><input type="text" class="form-control" required name="pUsuario"id="pUsuario"><br />
+                            <button type="button"  class="btn btn-default" onclick="ResPass()">Restablecer contraseña</button><br /><br />
 
+                        </form>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
 
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+  
+</body>
+</html>
 <?php
 }
-?>
-<?php ob_end_flush(); ?>

@@ -14,21 +14,31 @@ function inicio() {
     $.post("getBlogAdmin.php", function (data) {
         arr = $.map(JSON.parse(data), function (el) { return el });
         for (i = 0; i < arr.length; i++) {
+            var j = i;
+            if (j%2 === 0)
+            {
+                $('#result').append("<div class='col-md-12'></div>");
+            }
             $('#result').append(
-                '<form class="form" >' +
-                '<div class="form-group">' +
+                '<div class="col-md-6"><div class="col-md-2"></div><div class="EntradaBlog col-md-8 blog"><form class="form" >' +
+                '<div class="form-group top-blog">' +
                 '<label>Titulo del blog: </label><input class="form-control" type="text" name="pTitulo" value ="' + arr[i].titulo + '">' +
                 '<label>Nombre del autor: </label><input class="form-control" type="text"  name="pNombreAutor" value ="' + arr[i].nombreAutor + '">' +
                 '</div><div class="form-group">' +
                 '<label>Cuerpo del blog: </label><textarea class="form-control TextAreaTamaoFijo" required maxlength="2000" name="pCuerpo" >' + arr[i].cuerpo + '</textarea>' +
                 '</div><div class="form-group">' +
-                '<label>Fecha de la publicación: </label><input class="form-control" type="date" name="pFecha" value ="' + arr[i].fecha + '">' + arr[i].pBit +
-                '<button type="button" class="btn btn-default" onclick = "UpdateBlog(' + (i) + ')">Guardar</button>' +
-                '<button type="button" class="btn btn-default" onclick = "DeleteBlog(' + (i) + ')">Eliminar</button>' +
+                '<label>Fecha de la publicación: </label><input class="form-control" type="date" name="pFecha" value ="' + arr[i].fecha + '">' + arr[i].pBit +'</br>'+
+                '<button type="button" class="btn btn-default marg-boton" onclick = "UpdateBlog(' + (i) + ')">Guardar</button>' +
+                '<button type="button" class="btn btn-default marg-boton" onclick = "DeleteBlog(' + (i) + ')">Eliminar</button>' +
                 '</div>' +
-                '</form><hr>');
+                '</form>'+
+                '<div class="header-content col-md-12 text-center">'+
+                '<img class="text-center img-blog" src = "'+arr[i].pathImg+'"></div><hr>'+
+                '</div><div class="col-md-2"></div></div>');
+            }
+            
 
-        }
+        
 
 
         document.getElementById('pCorreo').addEventListener('input', validarCorreo, false);
