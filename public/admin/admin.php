@@ -45,12 +45,13 @@ check_login();
 
         </div>
     </div>
-
+<nav>
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" id='AbrirModal'>Nuevo Blog</button>
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo2" id='AbrirModal1'>Cambio de Contraseña</button>
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo3" id='AbrirModal2'>Nuevo Usuario</button>
+    <button type="button" class="btn btn-default btn-lg"  onclick="window.location.href='logout.php'">Salir</button>
     <section id="result"></section>
-
+</nav>
 
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">

@@ -37,7 +37,9 @@ function generaPass(){
 $user = $_POST["User"];
 $email = $_POST["Email"];
 
-$link = mysqli_connect('localhost', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ' . mysql_error());
+
+
+$link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ' . mysql_error());
 
 $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');
 $result = mysqli_query($link, 'call Sp_GetEmail("'.$user.'")')
@@ -58,12 +60,11 @@ else{
     $p = generaPass();
     $p1 = crypt($p,"absifkjsdoaiownvasdv56ds45sdalf");
 
-
-    $link = mysqli_connect('localhost', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ' . mysql_error());
-
+    $link = mysqli_connect('107.180.58.44', 'jm57592253', 'Jomialfa0605')or die('No se pudo conectar: ' . mysql_error());
+    
     $nombreConexion=mysqli_select_db($link,'seedAdmin') or die('No se pudo seleccionar la base de datos');
 
-    $result = mysqli_query($link, 'call Sp_SetPass("'.$us.'","'.$p1.'")')
+    $result = mysqli_query($link, 'call Sp_SetPass("'.$user.'","'.$p1.'")')
     or die('1No se pudo sacar la base de datos');
     $correo =$restem['Correo'];
     mail($correo, "Recuperar Contraseña", "La contraseña genereada es la siguiente: ".$p."", "From: noreplay@seedcr.com"); 
