@@ -1,0 +1,28 @@
+body {
+  background: #222 !important;
+}
+h1, h2, h3
+{
+    color: #fff;
+}
+.img-blog
+{
+    max-height: 300px;
+    max-width: 100%;
+    margin: 2%
+    
+}
+.blog
+{
+    background-color: #fff;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+    margin: 5%
+}
+.top-blog
+{
+    margin-top: 2%
+}
+.marg-boton{
+    margin: 3%
+}

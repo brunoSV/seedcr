@@ -33,26 +33,55 @@ check_login();
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+    <link rel="stylesheet" href="css/style_admin.css" type="text/css">
     <title></title>
 </head>
 
 <body>
-    <div class="header-content">
+<div class="col-md-12 text-right">
+        <nav id="mainNav" class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-seed-navbar-collapse-1">
+                    <span class="fa fa-align-justify wow bounceIn"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-seed-navbar-collapse-1">
+                <div class="col-lg-10">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <div class="row-marker-navbar color1"></div>
+                            <a type="button" class="page-scroll" data-toggle="modal" data-target="#myModal" id='AbrirModal'>Nueva entrade del Blog</a>
+    
+                        </li>
+                        <li>
+                            <div class="row-marker-navbar color2"></div>
+                            <a type="button" class="page-scroll" data-toggle="modal" data-target="#myMo2" id='AbrirModal1'>Cambio de Contraseña</a>
+    
+                        </li>
+                        <li>
+                            <div class="row-marker-navbar color3"></div>
+                            <a type="button" class="page-scroll" data-toggle="modal" data-target="#myMo3" id='AbrirModal2'>Nuevo Usuario</a>
+                        </li>
+                        <li>
+                            <div class="row-marker-navbar color4"></div>
+                            <a class="page-scroll" href="logout.php">Salir</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    <div class="header-content col-md-12 text-center">
         <div class="header-content-inner text">
 
-            <img src="img/logo-blanco.png" width="1%">
-            <h3>s.e.e.d. ADMIN</h3>
+            <img src="img/logo-blanco.png">      
 
         </div>
     </div>
-<nav>
-    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" id='AbrirModal'>Nuevo Blog</button>
-    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo2" id='AbrirModal1'>Cambio de Contraseña</button>
-    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myMo3" id='AbrirModal2'>Nuevo Usuario</button>
-    <button type="button" class="btn btn-default btn-lg"  onclick="window.location.href='logout.php'">Salir</button>
-    <section id="result"></section>
-</nav>
-
+    <div id="result"></div>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
