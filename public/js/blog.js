@@ -1,22 +1,29 @@
 'use strict';
 // WE DEFINED A GLOBAL OBJECT (Im really proud of this :D )
 var SEED = {
+    gridderBttn: function () {
+        $('.gridder-list').on('click', function() {
+            console.log('this is when i click this shit', this);
+        });
+    },
     //Start the Ajax request
     getBlog: function () {
         jQuery.ajax({
-            url: 'admin/getBlogAdmin.php',
+            url: 'admin/getBlog.php',
             type: 'POST',
+            data: {pBit: 1},
         }).done(function (response) {
             var data = JSON.parse(response)
             console.log(data);
               jQuery.each(data, function (index, value) {
                 jQuery('.gridder').append(
                     '<li class="gridder-list col-lg-3 col-md-6" data-griddercontent="' + index + '">' +
-                        '<img src="http://placehold.it/200x200&amp;text=' + value.titulo + '"/>'+
+                        '<h3>' + value.titulo + '</h3>' +
+                        '<img class="img-blog" src="admin/' + value.pathImg + '"/>'+
                     '</li>'
                 );
-                jQuery('.gridder').append(
-                    '<div class="gridder-show">' +
+                jQuery('.blog-gridder-show').append(
+                    '<div class="gridder-show blog-content-'+ value.id +'">' +
                         '<div class="gridder-padding">' +
                             '<div class="gridder-navigation">' +
                                 '<a class="gridder-close">Close</a>' +
@@ -49,18 +56,12 @@ var SEED = {
             console.warn("Something went wrong with this error: ", response.status);
             console.warn("Something went wrong with this error: ", response.statusText);
         });
+        // $('.gridder-show').hide();
+        console.log('here');
+        // $('.gridder-list').trigger('gridderBttn');
+        SEED.gridderBttn();
     },
-    gridder: function () {
-        $('.gridder-show').hide();
-        $('.gridder-list').on('click', function() {
-            $('.gridder-show h2').text('Blog ' + this.id);
-            $('.gridder-show').show();
-        });
-        $('.gridder-close').on('click', function() {
-            $('.gridder-show').hide();
-        });
 
-    }
 };
-SEED.gridder();
 SEED.getBlog();
+// SEED.gridderBttn();

@@ -603,6 +603,9 @@ body {
 .gridder-list {
     list-style-type: none;
     margin-top: 20px;
+    text-align: center;
+    width: 300px;
+    height: 300px;
 }
 .gridder-show {
     display: inline-block;
@@ -625,4 +628,13 @@ body {
 }
 .gridder-show {
     display:none;
+    margin-top: 50px;
+}
+.img-blog {
+    height: 70%;
+    width: 100%;
+}
+.gridder-list:hover {
+    background-color: #C4D951;
+    cursor:pointer;
 }
