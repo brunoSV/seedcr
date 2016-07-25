@@ -392,6 +392,23 @@ header .header-content .header-content-inner p {
     }
 }
 
+.network-box {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
+}
+
+.network-box img {
+    width: 100%
+}
+
+@media(min-width:992px) {
+    .network-box {
+        margin: 20px auto 0;
+        align-content: center;
+    }
+}
+
 .call-to-action h2 {
     margin: 0 auto 20px;
 }
@@ -569,12 +586,7 @@ body {
 .impact-section {
     margin-top: auto;
 }
-.impact-img-95 {
-    max-width: 95%;
-}
-.impact-img-80 {
-    max-width: 80%;
-}
+
 .impact-img {
     max-width: 100%;
 }
