@@ -616,7 +616,7 @@ body {
     list-style-type: none;
     margin-top: 20px;
     text-align: center;
-    width: 300px;
+    width: 250px;
     height: 300px;
 }
 .gridder-show {
@@ -627,7 +627,8 @@ body {
     cursor: pointer;
     color: black;
     float: right;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-top: 5px;
 }
 .gridder-navigation {
     padding-top: 10px;
@@ -641,10 +642,22 @@ body {
 .gridder-show {
     display:none;
     margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .img-blog {
     height: 70%;
     width: 100%;
+}
+.gridder-list h3 {
+    font-size: 15px;
+}
+.body-blog p {
+    margin-right: 30px;
+    margin-top: 30px;
+    text-align: justify;
+}
+.body-blog {
+    float: right;
 }
 .gridder-list:hover {
     background-color: #C4D951;
