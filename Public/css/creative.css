@@ -603,12 +603,15 @@ body {
     background: transparent;
     cursor: pointer;
 }
-.idiomChange{
-    color: rgba(255,255,255,.7);
+.language-selector-div {
+    margin-top: 15px;
+}
+.language-selector{
+    color: #9B9F48;
     font-size: 19px;
 }
-.idiomChangeColl{
-    color: rgba(255,255,255,.7);
+.language-selector-col{
+    color: #222;
     font-size: 15px;
     color: #516C18
 }
@@ -659,7 +662,21 @@ body {
 .body-blog {
     float: right;
 }
+.gridder-list-hide {
+    display: none;
+}
 .gridder-list:hover {
     background-color: #C4D951;
-    cursor:pointer;
+    cursor: pointer;
+}
+#pager-preview,
+#pager-next {
+    cursor: pointer;
+    width: 90px;
+}
+#pager-next {
+    float: right;
+}
+#pager-preview{
+    float: left;
 }

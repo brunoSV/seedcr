@@ -38,12 +38,12 @@
 </head>
 
 <body id="page-top">
-
+    <div id="seed-eng"></div>
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <div>
-                    <a class="idiomChangeColl navbar-toggle collapsed" href="indexESP.html"><strong>ESP</strong></a>
+                    <a class="language-selector-col navbar-toggle collapsed" href="indexESP.html"><strong>ESP</strong></a>
                 </div>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-seed-navbar-collapse-1">
                     <span class="fa fa-align-justify wow bounceIn"></span>
@@ -87,8 +87,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2 text-right">
-                    <a class="idiomChange"href="index_esp.html"><strong>ESP</strong></a>
+                <div class="col-lg-2 text-right language-selector-div">
+                    <a class="language-selector" href="index_esp.html"><strong>ESP</strong></a>
                 </div>
             </div>
         </div>
@@ -605,6 +605,11 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">OUR BLOG</h2>
                     <hr class="primary">
+                    <div id="seed-paginator"></div>
+                    <ul class="pager">
+                      <li><a id="pager-preview">Previous</a></li>
+                      <li><a id="pager-next">Next</a></li>
+                    </ul>
                 </div>
             <ul class="gridder"></ul>
             <div class="blog-gridder-show"></div>
@@ -648,7 +653,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
 
-    <script src="js/jquery.gridder.min.js"></script>
 
     <script src="js/team.js"></script>
     <script src="js/blog.js"></script>
