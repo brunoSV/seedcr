@@ -3,7 +3,16 @@
 var SEED = {
     gridderBttn: function () {
         $('.gridder-list').on('click', function() {
-            console.log('this is when i click this shit', this);
+            var id =  $(this).attr('data-griddercontent');
+            jQuery('.gridder-show').hide();
+            jQuery('.blog-content-' + id).slideToggle('slow');
+            jQuery('.blog-content-' + id).css('display', 'inline-block');
+            $('html, body').animate({
+                scrollTop: $('.blog-content-' + id).offset().top - 40
+            }, 1500);
+        });
+        $('.gridder-close').on('click', function () {
+            jQuery('.gridder-show').slideUp();
         });
     },
     //Start the Ajax request
@@ -14,10 +23,9 @@ var SEED = {
             data: {pBit: 1},
         }).done(function (response) {
             var data = JSON.parse(response)
-            console.log(data);
               jQuery.each(data, function (index, value) {
                 jQuery('.gridder').append(
-                    '<li class="gridder-list col-lg-3 col-md-6" data-griddercontent="' + index + '">' +
+                    '<li class="gridder-list col-lg-3 col-md-6" data-griddercontent="' + value.id + '">' +
                         '<h3>' + value.titulo + '</h3>' +
                         '<img class="img-blog" src="admin/' + value.pathImg + '"/>'+
                     '</li>'
@@ -34,9 +42,9 @@ var SEED = {
                                         '<div id="carousel-0" class="carousel slide">' +
                                             '<div class="carousel-inner" role="listbox">' +
                                                 '<div class="item active">' +
-                                                    '<img src="" class="img-responsive">' +
+                                                    '<img src="admin/' + value.pathImg + '" class="img-responsive img-blog">' +
                                                     '<div class="carousel-caption">' +
-                                                        'Blog' +
+                                                        value.titulo +
                                                     '</div>' +
                                                 '</div>' +
                                             '</div>' +
@@ -44,6 +52,7 @@ var SEED = {
                                     '</div>' +
                                     '<div class="body-blog col-sm-6">' +
                                         '<h2>' + value.titulo + '</h2>' +
+                                        '<span class="text-muted">By ' + value.nombreAutor + '</span>' +
                                         '<p>' + value.cuerpo + '</p>' +
                                     '</div>' +
                             '</div>' +
@@ -51,17 +60,13 @@ var SEED = {
                     '</div>'
                 );
               });
+            SEED.gridderBttn();
         })
         .fail(function (response) {
             console.warn("Something went wrong with this error: ", response.status);
             console.warn("Something went wrong with this error: ", response.statusText);
         });
-        // $('.gridder-show').hide();
-        console.log('here');
-        // $('.gridder-list').trigger('gridderBttn');
-        SEED.gridderBttn();
     },
 
 };
 SEED.getBlog();
-// SEED.gridderBttn();
