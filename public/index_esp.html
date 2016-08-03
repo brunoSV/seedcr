@@ -44,7 +44,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div>
-                    <a class="IdiomChangeColl navbar-toggle collapsed" href="index.html"><strong>ENG</strong></a>
+                    <a class="language-selector-col navbar-toggle collapsed" href="index.html"><strong>ENG</strong></a>
                 </div>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-seed-navbar-collapse-1">
                     <span class="fa fa-align-justify wow bounceIn"></span>
@@ -84,8 +84,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-2 text-right">
-                    <a class="IdiomChange" href="index.html"><strong>ENG</strong></a>
+                <div class="col-lg-2 text-right language-selector-div">
+                    <a class="language-selector nav navbar-nav" href="index.html"><strong>ENG</strong></a>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
             </div>
         </div>
     </header>
-   
+
     <section id="Servicios">
         <div class="container">
             <div class="row">
@@ -593,50 +593,17 @@
             </div>
     </section>
 
-    <section id="blog">
+<section id="blog">
         <div class="container">
-            <ul class="gridder">
-                <li class="gridder-list selectedItem" data-griddercontent="#gridder-content-0" id="0">
-                    <img src="http://placehold.it/200x200&amp;text=Blog 0" class="img-responsive">
-                </li>
-                <li class="gridder-list selectedItem" data-griddercontent="#gridder-content-1" id="1">
-                    <img src="http://placehold.it/200x200&amp;text=Blog 1" class="img-responsive">
-                </li>
-                <li class="gridder-list selectedItem" data-griddercontent="#gridder-content-2" id="2">
-                    <img src="http://placehold.it/200x200&amp;text=Blog 2" class="img-responsive">
-                </li>
-            </ul>
-            <div class="gridder-show" style="display: block;"><div class="gridder-padding"><div class="gridder-navigation"><a class="gridder-close">Cerrar</a></div><div class="gridder-expanded-content">
-                    <div class="row">
-                        <div class="col-sm-6">
-
-                            <div id="carousel-0" class="carousel slide">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-0" data-slide-to="0" class=""></li>
-                                </ol>
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <img src="http://placehold.it/600x600&amp;text=carousel-0 | IMAGE 2" class="img-responsive">
-                                        <div class="carousel-caption">
-                                            Blog
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-sm-6">
-                            <h2>Blog</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ex augue, hendrerit sed gravida ut, mattis vel tortor. Duis hendrerit sagittis bibendum. Fusce massa risus, hendrerit et est vitae, convallis accumsan ipsum. Integer vitae erat mattis, ornare tortor nec, luctus turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse finibus fermentum consectetur. Nulla vestibulum, diam ut finibus dictum, justo felis blandit mi, sed rhoncus tortor augue vitae orci. Fusce semper eu ante ut faucibus.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ex augue, hendrerit sed gravida ut, mattis vel tortor. Duis hendrerit sagittis bibendum. Fusce massa risus, hendrerit et est vitae, convallis accumsan ipsum. Integer vitae erat mattis, ornare tortor nec, luctus turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse finibus fermentum consectetur. Nulla vestibulum, diam ut finibus dictum, justo felis blandit mi, sed rhoncus tortor augue vitae orci. Fusce semper eu ante ut faucibus.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ex augue, hendrerit sed gravida ut, mattis vel tortor. Duis hendrerit sagittis bibendum. Fusce massa risus, hendrerit et est vitae, convallis accumsan ipsum. Integer vitae erat mattis, ornare tortor nec, luctus turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse finibus fermentum consectetur. Nulla vestibulum, diam ut finibus dictum, justo felis blandit mi, sed rhoncus tortor augue vitae orci. Fusce semper eu ante ut faucibus.</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">PUBLICACIONES</h2>
+                    <hr class="primary">
+                </div>
+            <ul class="gridder"></ul>
+            <div class="blog-gridder-show"></div>
         </div>
     </section>
-        
+
     <section id="Contacto">
         <div class="container">
             <div class="row">
@@ -660,7 +627,7 @@
             </div>
         </div>
     </section>
-        
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -676,6 +643,7 @@
     <script src="js/creative.js"></script>
 
     <script src="js/team.js"></script>
+    <script src="js/blog.js"></script>
 
 </body>
 

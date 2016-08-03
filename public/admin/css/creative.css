@@ -13,8 +13,8 @@ body {
 .thumb{
      width: 50%;
      margin: 10px 5px 0 0;
-    
-     
+
+
 }
 
 body {
@@ -581,17 +581,17 @@ body {
     background: transparent;
     cursor: pointer;
 }
-.IdiomChange{
+.language-selector{
     color: rgba(255,255,255,.7);
     font-size: 19px;
-    
+
 }
 
-.IdiomChangeColl{
+.language-selector-col{
     color: rgba(255,255,255,.7);
     font-size: 15px;
     color: #516C18
-    
+
 }
 .TextAreaTamaoFijo{
      max-width:100%;
