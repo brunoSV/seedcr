@@ -66,8 +66,12 @@ var SEED = {
         }).done(function (response) {
             var data = JSON.parse(response);
               $.each(data, function (index, value) {
-                if (index > 8) {
+                if (index <= 8) {
+                    jQuery('#pager-next').hide();
                     jQuery('#pager-preview').hide();
+                }
+                if (index > 8) {
+                    jQuery('#pager-next').show();
                     showClass = 'gridder-list-hide';
                 }
                 $('.gridder').append(

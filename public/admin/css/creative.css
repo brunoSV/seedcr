@@ -93,11 +93,12 @@ h2 {
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
-font-family: "Montserrat", "Varela Round", sans-serif;
+    font-family: "Montserrat", "Varela Round", sans-serif;
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+    cursor: pointer;
 }
 
 /*Change to the row marker on top of the navbar items*/
